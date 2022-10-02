@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>5 Teman</title>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<style>
+    table{
+    font-family: sans-serif;
+    color: black;
+    border-collapse: collapse;
+    width: 100px;
+    border: 2px solid black;
+    background: #add8e6;
+
+    
+}
+    table tr th {
+    background: lightcoral;
+    color: black;
+    font-weight: normal;
+    background-color: #728fce;
+}
+
+    table, th, td {
+    padding: 10px 20px;
+    text-align: center;
+
+}
+
+    table td:hover{
+    background-color: grey;
+
+}
+    body{
+        background: lightgrey;
+        font-size: 15px;
+    }
+    h1{
+        font-size: 30px;
+        font-family: sans-serif;
+    }
+    
+</style>
+</head>
+<body>
+    <h1 align="center">5 Teman C1</h1>
+    <table class="tabelku">
+
+<table class="tabelku" border="2" align="center">
+  <tr>
+    <th>No.</th>
+    <th>Nama</th>
+    <th>Alamat</th>
+    <th>Aksi</th>
+  </tr>
+
+  <tr id="row__1">
+    <td>1.</td>
+    <td class="nama_mhs">Rochman</td>
+    <td class="Alamat_mhs">Sirandu</td>
+    <td class="Hapus" id="Hapus__1">Hapus</td>
+  </tr>
+
+  <tr id="row__2">
+    <td>2.</td>
+    <td class="nama_mhs">Nurfaizal</td>
+    <td class="Alamat_mhs">Pilang</td>
+    <td class="Hapusi" id="Hapus__2">Hapus</td>
+  </tr>
+
+  <tr id="row__3">
+    <td>3.</td>
+    <td class="nama_mhs">Aldeadzan</td>
+    <td class="Alamat_mhs">Pilang</td>
+    <td class="Hapus" id="Hapus__3">Hapus</td>
+  </tr>
+
+  <tr id="row__4">
+    <td>4.</td>
+    <td class="nama_mhs">Aldi</td>
+    <td class="Alamat_mhs">Arumsari</td>
+    <td class="Hapus" id="Hapus__4">Hapus</td>
+  </tr>
+
+   <tr id="row__5">
+    <td>5.</td>
+    <td class="nama_mhs">Zulfikar</td>
+    <td class="Alamat_mhs">Kesambi</td>
+    <td class="Hapus" id="Hapus__5">Hapus</td>
+  </tr>
+    
+</table>
+</body>
+</html>
+
+<script>
+    $(document).ready(function(){
+        //alert(0)
+        $('.nama_mhs').click(function(){
+            //alert(1)
+            let isi = $(this).text();
+            //alert(isi);
+            let isi2 = prompt('ubah dengan:, isi');
+            if(!isi2) return;
+            //alert(isi2);
+
+            $(this).text(isi2);
+        })
+
+        $('.Hapus').click(function(){
+            //alert(1)
+            let yakin = confirm('yakin ingin menghapus?');
+            if(!yakin) return;
+
+            let id = $(this).prop('id');
+            //alert(id);
+
+            let rid = id.split('__');
+            let baris_ke = rid[1];
+
+            //alert(baris_ke);
+
+            $('#row__'+baris_ke).fadeOut();
+
+            //alert('Anda yakin')
+        })
+
+        $('.Alamat_mhs').click(function(){
+            //alert(1)
+            let isi = $(this).text();
+            //alert(isi);
+            let isi2 = prompt('ubah dengan:, isi');
+            if(!isi2) return;
+            //alert(isi2);
+            $(this).text(isi2);
+
+        })
+    })
+</script>
